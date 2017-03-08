@@ -1398,7 +1398,7 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
 											foreach ($shapes as $idx => $shape) {
 												$shape->registerXPathNamespace('v', 'urn:schemas-microsoft-com:vml');
 												$imageData = $shape->xpath('//v:imagedata');
-												if (!isset($imageData[$idx])
+												if (!isset($imageData[$idx]))
 												    continue;
 												$imageData = $imageData[$idx];
 
