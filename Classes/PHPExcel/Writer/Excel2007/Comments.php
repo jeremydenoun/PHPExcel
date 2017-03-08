@@ -208,7 +208,8 @@ class PHPExcel_Writer_Excel2007_Comments extends PHPExcel_Writer_Excel2007_Write
 		$objWriter->writeAttribute('id', 			'_x0000_s' . $id);
 		$objWriter->writeAttribute('type', 			'#_x0000_t202');
 		$objWriter->writeAttribute('style', 		'position:absolute;margin-left:' . $pComment->getMarginLeft() . ';margin-top:' . $pComment->getMarginTop() . ';width:' . $pComment->getWidth() . ';height:' . $pComment->getHeight() . ';z-index:1;visibility:' . ($pComment->getVisible() ? 'visible' : 'hidden'));
-		$objWriter->writeAttribute('fillcolor', 	'#' . $pComment->getFillColor()->getRGB());
+		$objWriter->writeAttribute('fillcolor', 	'white');
+		$objWriter->writeAttribute('color', 		'black');
 		$objWriter->writeAttribute('o:insetmode', 	'auto');
 
 			// v:fill
@@ -217,11 +218,11 @@ class PHPExcel_Writer_Excel2007_Comments extends PHPExcel_Writer_Excel2007_Write
 			$objWriter->endElement();
 
 			// v:shadow
-			$objWriter->startElement('v:shadow');
-			$objWriter->writeAttribute('on', 			't');
-			$objWriter->writeAttribute('color', 		'black');
-			$objWriter->writeAttribute('obscured', 		't');
-			$objWriter->endElement();
+// 			$objWriter->startElement('v:shadow');
+// 			$objWriter->writeAttribute('on', 			't');
+// 			$objWriter->writeAttribute('color', 		'black');
+// 			$objWriter->writeAttribute('obscured', 		't');
+// 			$objWriter->endElement();
 
 			// v:path
 			$objWriter->startElement('v:path');
